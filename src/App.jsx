@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 
 const API_URL =
@@ -11,16 +11,19 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const getMovies = async (url) => {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    setMovies(data.results);
+  };
+
   const getClassByRate = (vote) => {
     if (vote >= 8) {
       return "green";
     } else if (vote >= 5) {
       return "orange";
     } else return "red";
-  };
-
-  const showMovies = (movies) => {
-    setMovies(movies);
   };
 
   const handlePopularClick = async () => {
@@ -37,13 +40,6 @@ const App = () => {
     } else {
       window.location.reload();
     }
-  };
-
-  const getMovies = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    showMovies(data.results);
   };
 
   return (
