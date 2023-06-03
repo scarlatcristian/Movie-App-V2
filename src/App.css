@@ -54,9 +54,9 @@ header {
 }
 
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* Three columns with equal width */
   justify-content: space-evenly;
-  flex-wrap: wrap;
 }
 
 .movie {
