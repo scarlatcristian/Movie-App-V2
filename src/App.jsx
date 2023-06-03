@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Movie from "./components/Movie";
+import Footer from "./components/Footer";
 
 const SEARCH_API =
   'https://api.themoviedb.org/3/search/movie?api_key=b964182d9ad0d2eae80588f7d2a4f3b5&query="';
@@ -92,17 +93,11 @@ const App = () => {
         })}
       </main>
 
-      <footer className="footer">
-        <button className="popular btn" onClick={handlePreviousPage}>
-          Previous
-        </button>
-
-        <span>{page}</span>
-
-        <button className="popular btn" onClick={handleNextPage}>
-          Next
-        </button>
-      </footer>
+      <Footer
+        page={page}
+        handleNextPage={handleNextPage}
+        handlePreviousPage={handlePreviousPage}
+      />
     </div>
   );
 };
