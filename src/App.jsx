@@ -74,7 +74,7 @@ const App = () => {
               <div className="movie-info">
                 <h3>{title}</h3>
                 <span className={getClassByRate(vote_average)}>
-                  {vote_average}
+                  {vote_average.toFixed(1)}
                 </span>
               </div>
               <div className="overview">
