@@ -1,3 +1,5 @@
+import "./Footer.css";
+
 const Footer = (props) => {
   const { handleNextPage, handlePreviousPage, page } = props;
   return (

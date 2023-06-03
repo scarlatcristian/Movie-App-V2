@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Movie from "./components/Movie";
-import Footer from "./components/Footer";
+import Movie from "./components/Movie/Movie";
+import Footer from "./components/Footer/Footer";
 
 const SEARCH_API =
   'https://api.themoviedb.org/3/search/movie?api_key=b964182d9ad0d2eae80588f7d2a4f3b5&query="';
